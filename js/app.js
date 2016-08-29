@@ -28,14 +28,11 @@ function getRequest(searchTerm) {
     $.getJSON('https://www.googleapis.com/youtube/v3/search', params, function(data) {
         var showResults = data.items;
         $.each(showResults, function(index, x) {
-
-        // $("#search-results").html("<img src='" + youtubeTN + "'>");
-
+        var youtubeUrl = "https://www.youtube.com/watch?v=" + x.id.videoId;
         var youtubeTN = x.snippet.thumbnails.medium.url;
-        console.log(youtubeTN);
-
-
-
+        $('#video-url').append("<a href='" + youtubeUrl + "'>" + "<img src='" + youtubeTN + "'>" + "</a>");
+        // $('#picture-url').append("<img src='" + youtubeTN + "'>");
+        <a href="link adress here"> <img src="picture link here"> </a>
         });
     });
 
