@@ -21,21 +21,22 @@ function getRequest(searchTerm) {
     var params = {
         part: 'snippet',
         key: 'AIzaSyB0C85q-yECJMIwnvv39oSP24Qvw5ITjNY',
-        q: searchTerm, 
+        q: searchTerm,
 
     }
 
     $.getJSON('https://www.googleapis.com/youtube/v3/search', params, function(data) {
-     var showResults = data.items; //why is data.items used??? how do i know if it's items, and not other key? which website do i use as a reference for this key in devtools? 
-      console.log(data);
-       // $.each(searchResult, function(index, value) {
-       // 		//assign variable to youtube url to be assigned to youtube ID
-       // 		var youtubeUrl = "https://www.youtube.com/watch?v=" + item.id.videoId;
-       // 		//assign variable to picture of the video snippet 
+        var showResults = data.items;
+        $.each(showResults, function(index, x) {
+
+        // $("#search-results").html("<img src='" + youtubeTN + "'>");
+
+        var youtubeTN = x.snippet.thumbnails.medium.url;
+        console.log(youtubeTN);
 
 
-       	
-       // });
+
+        });
     });
 
 };
