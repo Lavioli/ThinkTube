@@ -28,10 +28,11 @@ function getRequest(searchTerm) {
         //the callback function takes in the received object and extracts the target value, in this case, the urls' are 
         //appended to the #video-url as a clickable image.
         var showResults = data.items;
+        $('#video-url').html("");
         $.each(showResults, function(index, x) {
             var youtubeUrl = "https://www.youtube.com/watch?v=" + x.id.videoId;
             var youtubeTN = x.snippet.thumbnails.medium.url;
-            $('#video-url').append("<a href='" + youtubeUrl + "'>" + "<img src='" + youtubeTN + "'>" + "</a>");
+            $('#video-url').append("<a class='res' href='" + youtubeUrl + "'>" + "<img src='" + youtubeTN + "'>" + "</a>");
             // $('#picture-url').append("<img src='" + youtubeTN + "'>");
         });
     });

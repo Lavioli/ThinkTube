@@ -3,17 +3,20 @@
 
 <head>
     <title>ThinkTube</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
-    <form id="search-term">
-        <input id="query"></input>
-        <button>Search</button>
-    </form>
-    <div id="search-results">
-    	<div id="video-url"><a href=""></a></div>
-    	<div id="picture-url"><img src=""></div>
-
+    <div class="banner"> <img src="images/banner.png" alt="logo"></div>
+    <div class="search-box">
+        <form id="search-term">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input id="query" type="text" autocomplete="off"></input>
+        </form>
+    </div>
+    <div id="search-results" class="search-results">
+        <div id="video-url"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
